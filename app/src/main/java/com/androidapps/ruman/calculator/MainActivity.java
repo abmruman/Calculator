@@ -14,6 +14,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void clickNext(View v) {
-        startActivity(new Intent("com.androidapps.ruman.calculator.HISTORY_ACTIVIY"));
+        startActivity(new Intent("com.androidapps.ruman.calculator.HISTORY_ACTIVITY"));
     }
 }

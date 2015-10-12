@@ -1,13 +1,13 @@
 package com.androidapps.ruman.calculator;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 /**
  * Created by ruman on 10/8/15.
  */
-public class HistoryActivity extends Activity {
+public class HistoryActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -17,7 +17,7 @@
         </activity>
         <activity android:name=".HistoryActivity">
             <intent-filter>
-                <action android:name="com.androidapps.ruman.calculator.HISTORY_ACTIVIY" />
+                <action android:name="com.androidapps.ruman.calculator.HISTORY_ACTIVITY" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
