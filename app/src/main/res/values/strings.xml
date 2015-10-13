@@ -1,5 +1,25 @@
 <resources>
     <string name="app_name">Calculator</string>
-    <string name="next_btn">Next</string>
-    <string name="main_calculator">Main Calculator</string>
+    <string name="btn_7">7</string>
+    <string name="btn_8">8</string>
+    <string name="strBtn9">9</string>
+    <string name="strBtnDivide">"\u00F7"</string>
+    <string name="strBtnDel">DEL</string>
+    <string name="strBtn4">4</string>
+    <string name="strBtn5">5</string>
+    <string name="strBtn6">6</string>
+    <string name="strBtnMulti">x</string>
+    <string name="strBtnParStart">(</string>
+    <string name="strBtn1">1</string>
+    <string name="strBtn2">2</string>
+    <string name="strBtn3">3</string>
+    <string name="strBtnMinus">-</string>
+    <string name="strBtnParEnd">)</string>
+    <string name="strBtnDot">.</string>
+    <string name="strBtn0">0</string>
+    <string name="strBtnPi">"\u03C0"</string>
+    <string name="strBtnPlus">+</string>
+    <string name="strBtnEqual">=</string>
+    <string name="main_calculator">0</string>
+    <string name="history">History</string>
 </resources>
