@@ -14,14 +14,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:gravity="end"
         android:onClick="clickBack"
-        android:text="Back" />
+        android:text="@string/back" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="This is history."
+        android:text=""
         android:layout_below="@+id/buttonBack" />
 
 </RelativeLayout>

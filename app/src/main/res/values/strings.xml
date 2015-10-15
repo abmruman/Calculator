@@ -2,24 +2,25 @@
     <string name="app_name">Calculator</string>
     <string name="btn_7">7</string>
     <string name="btn_8">8</string>
-    <string name="strBtn9">9</string>
-    <string name="strBtnDivide">"\u00F7"</string>
-    <string name="strBtnDel">DEL</string>
-    <string name="strBtn4">4</string>
-    <string name="strBtn5">5</string>
-    <string name="strBtn6">6</string>
-    <string name="strBtnMulti">x</string>
-    <string name="strBtnParStart">(</string>
-    <string name="strBtn1">1</string>
-    <string name="strBtn2">2</string>
-    <string name="strBtn3">3</string>
-    <string name="strBtnMinus">-</string>
-    <string name="strBtnParEnd">)</string>
-    <string name="strBtnDot">.</string>
-    <string name="strBtn0">0</string>
-    <string name="strBtnPi">"\u03C0"</string>
-    <string name="strBtnPlus">+</string>
-    <string name="strBtnEqual">=</string>
+    <string name="btn_9">9</string>
+    <string name="btn_divide">"\u00F7"</string>
+    <string name="btn_del">DEL</string>
+    <string name="btn_4">4</string>
+    <string name="btn_5">5</string>
+    <string name="btn_6">6</string>
+    <string name="btn_multi">x</string>
+    <string name="btn_par_start">(</string>
+    <string name="btn_1">1</string>
+    <string name="btn_2">2</string>
+    <string name="btn_3">3</string>
+    <string name="btn_minus">-</string>
+    <string name="btn_par_end">)</string>
+    <string name="btn_dot">.</string>
+    <string name="btn_0">0</string>
+    <string name="btn_pi">"\u03C0"</string>
+    <string name="btn_plus">+</string>
+    <string name="btn_equal">=</string>
     <string name="main_calculator">0</string>
     <string name="history">History</string>
+    <string name="back">Back</string>
 </resources>

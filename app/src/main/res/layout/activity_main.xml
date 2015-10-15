@@ -14,34 +14,27 @@
         android:text="@string/history"
         android:id="@+id/btnHistory"
         android:layout_alignParentRight="true"
-        android:layout_column="5"
-        android:layout_weight="1"
+        android:layout_alignParentEnd="true"
         android:onClick="History"
         />
-    <EditText
-        android:id="@+id/editTextMain"
+    <TextView
+        android:id="@+id/textViewMain"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/main_calculator"
-        android:textAlignment="textEnd"
         android:layout_below="@id/btnHistory"
         android:gravity="end"
-        android:editable="false"/>
+        />
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/editTextMain"
-        android:layout_alignRight="@+id/editTextMain"
-        android:layout_alignEnd="@+id/editTextMain"
+        android:layout_below="@+id/textViewMain"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:paddingBottom="@dimen/activity_vertical_margin">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hapticFeedbackEnabled="true">
-
-
+            android:layout_height="match_parent">
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
@@ -61,7 +54,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtn9"
+                android:text="@string/btn_9"
                 android:id="@+id/btn9"
                 android:layout_column="2"
                 android:layout_weight="1"
@@ -69,7 +62,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtnDivide"
+                android:text="@string/btn_divide"
                 android:id="@+id/btnDivide"
                 android:layout_column="3"
                 android:layout_weight="1"
@@ -77,7 +70,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtnDel"
+                android:text="@string/btn_del"
                 android:id="@+id/btnDel"
                 android:layout_column="4"
                 android:layout_weight="1"
@@ -91,7 +84,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtn4"
+                android:text="@string/btn_4"
                 android:id="@+id/btn4"
                 android:layout_column="0"
                 android:layout_weight="1"
@@ -100,7 +93,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtn5"
+                android:text="@string/btn_5"
                 android:id="@+id/btn5"
                 android:layout_column="1"
                 android:layout_weight="1"
@@ -108,7 +101,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtn6"
+                android:text="@string/btn_6"
                 android:id="@+id/btn6"
                 android:layout_column="2"
                 android:layout_weight="1"
@@ -116,7 +109,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtnMulti"
+                android:text="@string/btn_multi"
                 android:id="@+id/btnMulti"
                 android:layout_column="3"
                 android:layout_weight="1"
@@ -124,7 +117,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtnParStart"
+                android:text="@string/btn_par_start"
                 android:id="@+id/btnParStart"
                 android:layout_column="3"
                 android:layout_weight="1"
@@ -137,7 +130,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtn1"
+                android:text="@string/btn_1"
                 android:id="@+id/btn1"
                 android:layout_column="0"
                 android:layout_weight="1"
@@ -146,7 +139,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtn2"
+                android:text="@string/btn_2"
                 android:id="@+id/btn2"
                 android:layout_column="1"
                 android:layout_weight="1"
@@ -154,7 +147,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtn3"
+                android:text="@string/btn_3"
                 android:id="@+id/btn3"
                 android:layout_column="2"
                 android:layout_weight="1"
@@ -162,7 +155,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtnMinus"
+                android:text="@string/btn_minus"
                 android:id="@+id/btnMinus"
                 android:layout_column="3"
                 android:layout_weight="1"
@@ -170,7 +163,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtnParEnd"
+                android:text="@string/btn_par_end"
                 android:id="@+id/btnParEnd"
                 android:layout_column="3"
                 android:layout_weight="1"
@@ -183,7 +176,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtnDot"
+                android:text="@string/btn_dot"
                 android:id="@+id/btnDot"
                 android:layout_column="0"
                 android:layout_weight="1"
@@ -192,7 +185,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtn0"
+                android:text="@string/btn_0"
                 android:id="@+id/btn0"
                 android:layout_column="1"
                 android:layout_weight="1"
@@ -200,7 +193,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtnPi"
+                android:text="@string/btn_pi"
                 android:id="@+id/btnPi"
                 android:layout_column="2"
                 android:layout_weight="1"
@@ -208,7 +201,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtnPlus"
+                android:text="@string/btn_plus"
                 android:id="@+id/btnPlus"
                 android:layout_column="3"
                 android:layout_weight="1"
@@ -216,7 +209,7 @@
             <Button
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/strBtnEqual"
+                android:text="@string/btn_equal"
                 android:id="@+id/btnEqual"
                 android:layout_column="3"
                 android:layout_weight="1"
