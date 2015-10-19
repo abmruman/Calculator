@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 /**
- * Created by ruman on 10/8/15.
+ * Created by A B M Ruman on 19/10/2015.
  */
 public class HistoryActivity extends AppCompatActivity {
     @Override
@@ -14,7 +14,7 @@ public class HistoryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_history);
     }
 
-    public void clickBack(View v) {
+    public void clickBack(View view) {
         finish();
     }
 }

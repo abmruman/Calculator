@@ -3,6 +3,7 @@ package com.androidapps.ruman.calculator;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
@@ -10,17 +11,27 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     TextView textViewMain, textViewResult;
+    Calculator calculator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        textViewMain = (TextView) findViewById(R.id.textViewMain);
-        textViewResult = (TextView) findViewById(R.id.textViewResult);
-
-
     }
 
-    public void History(View v) {
+    @Override
+    protected void onStart() {
+        super.onStart();
+        calculator = new Calculator();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        textViewMain = (TextView) findViewById(R.id.textViewMain);
+        textViewResult = (TextView) findViewById(R.id.textViewResult);
+    }
+
+    public void History(View view) {
         startActivity(new Intent("com.androidapps.ruman.calculator.HISTORY_ACTIVITY"));
     }
 
@@ -38,10 +49,14 @@ public class MainActivity extends AppCompatActivity {
             }
         }, 100L);
 
+        Double result;
+
         switch (txtBtn){
             case "=":
-                textViewMain.setText("0");
-                textViewResult.setText("Ans");
+                if (!textViewResult.toString().equals("")) {
+                    textViewMain.setText(textViewResult.getText().toString());
+                    textViewResult.setText("");
+                }
                 break;
             case "DEL":
 
@@ -71,8 +86,13 @@ public class MainActivity extends AppCompatActivity {
             case "-":
             case "x":
             case "÷":
-                String text = textViewMain.getText().toString();
-                if (text.endsWith("\u00F7") || text.endsWith("+") || text.endsWith("-") || text.endsWith("x") || text.endsWith("π"))
+                //String text = textViewMain.getText().toString();
+                if (strMain.endsWith("\u00F7")
+                        || strMain.endsWith("+")
+                        || strMain.endsWith("-")
+                        || strMain.endsWith("x")
+                        || strMain.endsWith("π")
+                        || strMain.equals("0"))
                     break;
 
             default:
@@ -82,7 +102,17 @@ public class MainActivity extends AppCompatActivity {
 
                     textViewMain.append(txtBtn);
                 }
+                strMain = textViewMain.getText().toString();
+                try {
+                    result = calculator.evaluate(strMain);
+                    textViewResult.setText(result.toString());
+                } catch (Exception ex) {
+                    Log.d("Calculator", ex.getStackTrace().toString());
+                }
                 break;
         }
+
     }
+
+
 }

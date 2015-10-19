@@ -20,6 +20,7 @@
     <string name="btn_pi">π</string>
     <string name="btn_plus">+</string>
     <string name="btn_equal">=</string>
+    <string name="Infinity">∞</string>
     <string name="main_calculator">0</string>
     <string name="history">HIS</string>
     <string name="back">Back</string>
