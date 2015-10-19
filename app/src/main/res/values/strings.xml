@@ -3,7 +3,7 @@
     <string name="btn_7">7</string>
     <string name="btn_8">8</string>
     <string name="btn_9">9</string>
-    <string name="btn_divide">"\u00F7"</string>
+    <string name="btn_divide">÷</string>
     <string name="btn_del">DEL</string>
     <string name="btn_4">4</string>
     <string name="btn_5">5</string>
@@ -17,10 +17,10 @@
     <string name="btn_par_end">)</string>
     <string name="btn_dot">.</string>
     <string name="btn_0">0</string>
-    <string name="btn_pi">"\u03C0"</string>
+    <string name="btn_pi">π</string>
     <string name="btn_plus">+</string>
     <string name="btn_equal">=</string>
     <string name="main_calculator">0</string>
-    <string name="history">History</string>
+    <string name="history">HIS</string>
     <string name="back">Back</string>
 </resources>

@@ -13,9 +13,8 @@
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:gravity="end"
+        android:layout_alignParentRight="true"
         android:onClick="clickBack"
         android:text="@string/back" />
 
@@ -23,7 +22,7 @@
         android:id="@+id/textView"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text=""
-        android:layout_below="@+id/buttonBack" />
+        android:layout_below="@+id/buttonBack"
+        android:text="" />
 
 </RelativeLayout>
