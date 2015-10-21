@@ -1,17 +1,22 @@
 package com.androidapps.ruman.calculator;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.HorizontalScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+/**
+ * Created by A B M Ruman on 19/10/2015 for Project: Calculator.
+ */
+
+public class MainActivity extends Activity {
     TextView textViewMain, textViewResult;
     Calculator calculator;
+    History history;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         calculator = new Calculator();
+        history = new History(this);
     }
 
     @Override
@@ -29,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         textViewMain = (TextView) findViewById(R.id.textViewMain);
         textViewResult = (TextView) findViewById(R.id.textViewResult);
+
     }
 
     public void History(View view) {
@@ -36,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void Click  (View view){
+    public void Click(View view) {
         Button btn = (Button) view;
 
         String strMain = textViewMain.getText().toString();
@@ -51,12 +58,20 @@ public class MainActivity extends AppCompatActivity {
 
         Double result;
 
-        switch (txtBtn){
+        switch (txtBtn) {
             case "=":
                 if (!textViewResult.toString().equals("")) {
+                    try {
+                        history.writeHistory(textViewMain.getText() + " = " + textViewResult.getText() + "\n");
+                        Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                     textViewMain.setText(textViewResult.getText().toString());
                     textViewResult.setText("");
+
                 }
+
                 break;
             case "DEL":
 
@@ -103,11 +118,12 @@ public class MainActivity extends AppCompatActivity {
                     textViewMain.append(txtBtn);
                 }
                 strMain = textViewMain.getText().toString();
+
                 try {
-                    result = calculator.evaluate(strMain);
+                    result = calculator.calculate(strMain);
                     textViewResult.setText(result.toString());
-                } catch (Exception ex) {
-                    Log.d("Calculator", ex.getStackTrace().toString());
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
                 break;
         }

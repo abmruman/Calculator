@@ -24,4 +24,5 @@
     <string name="main_calculator">0</string>
     <string name="history">HIS</string>
     <string name="back">Back</string>
+    <string name="History">History</string>
 </resources>

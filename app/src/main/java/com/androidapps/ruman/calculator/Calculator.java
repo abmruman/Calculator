@@ -1,7 +1,7 @@
 package com.androidapps.ruman.calculator;
 
 /**
- * Created by A B M Ruman on 19/10/2015.
+ * Created by A B M Ruman on 19/10/2015 for Project: Calculator.
  */
 
 import com.fathzer.soft.javaluator.Constant;
@@ -27,30 +27,25 @@ public class Calculator extends DoubleEvaluator {
         return super.toValue(literal, evaluationContext);
     }
 
-    @Override
-    protected Double evaluate(Constant constant, Object evaluationContext) {
+    protected Double calculate(Constant constant, Object evaluationContext) {
         String expression = formExpression(constant.toString());
         return super.evaluate(expression, evaluationContext);
     }
 
-    @Override
-    protected Double evaluate(Operator operator, Iterator<Double> operands, Object evaluationContext) {
+    protected Double calculate(Operator operator, Iterator<Double> operands, Object evaluationContext) {
         return super.evaluate(operator, operands, evaluationContext);
     }
 
-    @Override
-    protected Double evaluate(Function function, Iterator<Double> arguments, Object evaluationContext) {
+    protected Double calculate(Function function, Iterator<Double> arguments, Object evaluationContext) {
         return super.evaluate(function, arguments, evaluationContext);
     }
 
-    @Override
-    public Double evaluate(String expression) {
+    public Double calculate(String expression) {
         expression = formExpression(expression);
         return super.evaluate(expression);
     }
 
-    @Override
-    public Double evaluate(String expression, Object evaluationContext) {
+    public Double calculate(String expression, Object evaluationContext) {
         expression = formExpression(expression);
         return super.evaluate(expression, evaluationContext);
     }

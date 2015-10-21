@@ -9,6 +9,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".HistoryActivity">
 
+
+    <TextView
+        android:id="@+id/textViewHistoryTitle"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/History"
+        android:textSize="50sp" />
+
     <Button
         android:id="@+id/buttonBack"
         android:layout_width="wrap_content"
@@ -18,11 +26,17 @@
         android:onClick="clickBack"
         android:text="@string/back" />
 
-    <TextView
-        android:id="@+id/textView"
+    <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonBack"
-        android:text="" />
+        android:layout_below="@+id/textViewHistoryTitle">
+
+        <TextView
+            android:id="@+id/textViewHistory"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="40sp" />
+    </ScrollView>
 
 </RelativeLayout>
