@@ -107,11 +107,14 @@ public class MainActivity extends Activity {
                         || strMain.endsWith("-")
                         || strMain.endsWith("x")
                         || strMain.endsWith("π")
-                        || strMain.equals("0"))
-                    break;
+                        || strMain.equals("0")) {
 
+                    break;
+                }
             default:
                 if (strMain.equals("0")) {
+                    textViewMain.setText(txtBtn);
+                } else if (txtBtn.matches("[0-9]") && textViewResult.getText().equals("")) {
                     textViewMain.setText(txtBtn);
                 } else {
 
@@ -121,7 +124,7 @@ public class MainActivity extends Activity {
 
                 try {
                     result = calculator.calculate(strMain);
-                    textViewResult.setText(result.toString());
+                    textViewResult.setText(result.toString()); //String.format("%.6f%n",result)
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
