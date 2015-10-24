@@ -9,7 +9,6 @@ import android.widget.TextView;
  * Created by A B M Ruman on 19/10/2015 for Project: Calculator.
  */
 public class HistoryActivity extends Activity {
-    private final String histroyFile = "history";
     public TextView textViewHistory;
     History history;
     @Override
