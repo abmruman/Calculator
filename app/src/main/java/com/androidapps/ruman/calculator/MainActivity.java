@@ -9,6 +9,8 @@ import android.widget.HorizontalScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 /**
  * Created by A B M Ruman on 19/10/2015 for Project: Calculator.
  */
@@ -56,7 +58,6 @@ public class MainActivity extends Activity {
             }
         }, 100L);
 
-
         switch (txtBtn) {
             case "=":
                 calculateResult();
@@ -74,12 +75,12 @@ public class MainActivity extends Activity {
 
                 break;
             case "DEL":
-
                 if (strMain.length() > 1) {
                     textViewMain.setText(strMain.toCharArray(), 0, strMain.length() - 1);
                 } else {
                     textViewMain.setText("0");
                 }
+                calculateResult();
                 break;
             case ".":
                 char[] arr = strMain.toCharArray();
@@ -95,8 +96,8 @@ public class MainActivity extends Activity {
                 if (!hasDot)
                     textViewMain.append(".");
                 break;
-            case "π":
-                txtBtn = getString(R.string.btn_pi);
+//            case "π":
+//                txtBtn = getString(R.string.btn_pi);
             case "+":
             case "-":
             case "x":
@@ -129,10 +130,11 @@ public class MainActivity extends Activity {
     public void calculateResult() {
         String strMain = textViewMain.getText().toString();
         Double result;
+        DecimalFormat decimalFormat = new DecimalFormat("#.######");
 
         try {
             result = calculator.calculate(strMain);
-            textViewResult.setText(result.toString()); //String.format("%.6f%n",result)
+            textViewResult.setText(decimalFormat.format(result)); //String.format("%.6f%n",result)
         } catch (Exception e) {
             e.printStackTrace();
         }
