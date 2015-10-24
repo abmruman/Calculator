@@ -22,6 +22,7 @@
             android:text="@string/main_calculator"
             android:textSize="50sp" />
     </HorizontalScrollView>
+
     <TextView
         android:id="@+id/textViewResult"
         android:layout_width="fill_parent"
@@ -32,6 +33,7 @@
         android:scrollHorizontally="true"
         android:text=""
         android:textSize="40sp" />
+
     <TableLayout
         style="@style/TablePad"
         android:layout_width="match_parent"
@@ -41,54 +43,46 @@
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <Button
                 android:id="@+id/btn7"
                 style="@style/ButtonNumber"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="0"
-                android:layout_weight="1"
                 android:onClick="Click"
                 android:text="@string/btn_7" />
+
             <Button
                 android:id="@+id/btn8"
                 style="@style/ButtonNumber"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:layout_weight="1"
                 android:onClick="Click"
                 android:text="@string/btn_8" />
+
             <Button
                 android:id="@+id/btn9"
                 style="@style/ButtonNumber"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="2"
-                android:layout_weight="1"
                 android:onClick="Click"
                 android:text="@string/btn_9" />
+
             <Button
                 android:id="@+id/btnDivide"
                 style="@style/ButtonSign"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="3"
-                android:layout_weight="1"
                 android:onClick="Click"
                 android:text="@string/btn_divide" />
 
             <Button
                 android:id="@+id/btnDel"
                 style="@style/ButtonSign"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="4"
-                android:layout_weight="1"
                 android:onClick="Click"
                 android:text="@string/btn_del" />
 
         </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -96,50 +90,46 @@
             <Button
                 android:id="@+id/btn4"
                 style="@style/ButtonNumber"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="0"
-                android:layout_weight="1"
                 android:onClick="Click"
-                android:text="@string/btn_4"
-                />
+                android:text="@string/btn_4" />
+
             <Button
                 android:id="@+id/btn5"
                 style="@style/ButtonNumber"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:layout_weight="1"
                 android:onClick="Click"
                 android:text="@string/btn_5" />
+
             <Button
                 android:id="@+id/btn6"
                 style="@style/ButtonNumber"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="2"
-                android:layout_weight="1"
+
                 android:onClick="Click"
                 android:text="@string/btn_6" />
+
             <Button
                 android:id="@+id/btnMulti"
                 style="@style/ButtonSign"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="3"
-                android:layout_weight="1"
                 android:onClick="Click"
                 android:text="@string/btn_multi" />
+
             <Button
                 android:id="@+id/btnHistory"
                 style="@style/ButtonSign"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_column="4"
-                android:layout_weight="1"
+                android:layout_margin="0dp"
+                android:layout_marginTop="0dp"
+                android:gravity="center_horizontal|bottom"
                 android:onClick="History"
-                android:text="@string/history" />
+                android:paddingBottom="0dp"
+                android:paddingTop="0dp"
+                android:text="@string/history"
+                android:textSize="20sp" />
         </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -147,50 +137,44 @@
             <Button
                 android:id="@+id/btn1"
                 style="@style/ButtonNumber"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="0"
-                android:layout_weight="1"
                 android:onClick="Click"
-                android:text="@string/btn_1"
-                />
+                android:text="@string/btn_1" />
+
             <Button
                 android:id="@+id/btn2"
                 style="@style/ButtonNumber"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:layout_weight="1"
                 android:onClick="Click"
                 android:text="@string/btn_2" />
+
             <Button
                 android:id="@+id/btn3"
                 style="@style/ButtonNumber"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="2"
-                android:layout_weight="1"
                 android:onClick="Click"
                 android:text="@string/btn_3" />
+
             <Button
                 android:id="@+id/btnMinus"
                 style="@style/ButtonSign"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="3"
-                android:layout_weight="1"
                 android:onClick="Click"
                 android:text="@string/btn_minus" />
+
             <Button
+                android:id="@+id/btnHistory2"
                 style="@style/ButtonSign"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="0"
-                android:layout_weight="1"
-                android:clickable="false"
-                android:onClick="Click"
-                android:text="" />
+                android:layout_column="4"
+                android:layout_margin="0dp"
+                android:gravity="center_horizontal|top"
+                android:onClick="History"
+                android:padding="0dp"
+                android:text="@string/history2"
+                android:textAllCaps="false"
+                android:textSize="17sp" />
         </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -198,47 +182,35 @@
             <Button
                 android:id="@+id/btnDot"
                 style="@style/ButtonNumber"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="0"
-                android:layout_weight="1"
                 android:onClick="Click"
-                android:text="@string/btn_dot"
-                />
+                android:text="@string/btn_dot" />
+
             <Button
                 android:id="@+id/btn0"
                 style="@style/ButtonNumber"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="1"
-                android:layout_weight="1"
                 android:onClick="Click"
                 android:text="@string/btn_0" />
+
             <Button
                 style="@style/ButtonNumber"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="0"
-                android:layout_weight="1"
                 android:clickable="false"
                 android:onClick="Click"
                 android:text="" />
+
             <Button
                 android:id="@+id/btnPlus"
                 style="@style/ButtonSign"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="3"
-                android:layout_weight="1"
                 android:onClick="Click"
                 android:text="@string/btn_plus" />
+
             <Button
                 android:id="@+id/btnEqual"
                 style="@style/ButtonSign"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
                 android:layout_column="3"
-                android:layout_weight="1"
                 android:onClick="Click"
                 android:text="@string/btn_equal" />
         </TableRow>

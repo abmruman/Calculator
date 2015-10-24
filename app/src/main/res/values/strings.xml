@@ -22,7 +22,8 @@
     <string name="btn_equal">=</string>
     <string name="Infinity">∞</string>
     <string name="main_calculator">0</string>
-    <string name="history">HIS</string>
+    <string name="history">H\ni\ns</string>
+    <string name="history2">t\no\nr\ny</string>
     <string name="back">Back</string>
     <string name="History">History</string>
 </resources>

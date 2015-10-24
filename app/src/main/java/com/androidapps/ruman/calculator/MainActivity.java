@@ -28,18 +28,18 @@ public class MainActivity extends Activity {
         super.onStart();
         calculator = new Calculator();
         history = new History(this);
+        textViewMain = (TextView) findViewById(R.id.textViewMain);
+        textViewResult = (TextView) findViewById(R.id.textViewResult);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        textViewMain = (TextView) findViewById(R.id.textViewMain);
-        textViewResult = (TextView) findViewById(R.id.textViewResult);
-
     }
 
     public void History(View view) {
         startActivity(new Intent("com.androidapps.ruman.calculator.HISTORY_ACTIVITY"));
+
     }
 
 
@@ -56,10 +56,10 @@ public class MainActivity extends Activity {
             }
         }, 100L);
 
-        Double result;
 
         switch (txtBtn) {
             case "=":
+                calculateResult();
                 if (!textViewResult.toString().equals("")) {
                     try {
                         history.writeHistory(textViewMain.getText() + " = " + textViewResult.getText() + "\n");
@@ -120,18 +120,21 @@ public class MainActivity extends Activity {
 
                     textViewMain.append(txtBtn);
                 }
-                strMain = textViewMain.getText().toString();
-
-                try {
-                    result = calculator.calculate(strMain);
-                    textViewResult.setText(result.toString()); //String.format("%.6f%n",result)
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
+                calculateResult();
                 break;
         }
 
     }
 
+    public void calculateResult() {
+        String strMain = textViewMain.getText().toString();
+        Double result;
 
+        try {
+            result = calculator.calculate(strMain);
+            textViewResult.setText(result.toString()); //String.format("%.6f%n",result)
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

@@ -9,17 +9,24 @@
     </style>
 
     <style name="ButtonGeneric">
-        <item name="android:textSize">35sp</item>
+        <item name="android:textAllCaps">false</item>
         <item name="android:paddingTop">20dp</item>
         <item name="android:paddingBottom">20dp</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">fill_parent</item>
+
     </style>
 
     <style name="ButtonNumber" parent="ButtonGeneric">
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">35sp</item>
         <item name="android:background">@color/colorGrayDark</item>
         <item name="android:textColor">@color/colorWhite</item>
     </style>
 
     <style name="ButtonSign" parent="ButtonGeneric">
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">25sp</item>
         <item name="android:background">@color/colorGray</item>
         <item name="android:textColor">@color/colorWhite</item>
     </style>
