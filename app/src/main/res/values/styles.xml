@@ -32,10 +32,24 @@
         <item name="android:textColor">@color/colorWhite</item>
     </style>
 
+    <style name="ButtonScientific" parent="ButtonGeneric">
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:background">@color/colorCyan</item>
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
     <style name="TablePad">
         <item name="android:layout_gravity">bottom</item>
-        <item name="android:gravity">bottom</item>
+        <item name="android:gravity">end|bottom</item>
     </style>
-    <style name="NumberTablePad" parent="TablePad">
+
+    <style name="NumberPadTable" parent="TablePad">
+
     </style>
+
+    <style name="ScientificPad" parent="TablePad">
+
+    </style>
+
 </resources>

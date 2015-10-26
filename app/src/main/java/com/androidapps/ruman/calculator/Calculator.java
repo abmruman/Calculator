@@ -55,8 +55,6 @@ public class Calculator extends DoubleEvaluator {
         str = str.replace('x', '*');
         str = str.replace('÷', '/');
         str = str.replace("π", "pi");
-        if (str.endsWith("+") || str.endsWith("-") || str.endsWith("*") || str.endsWith("/"))
-            str = str.substring(0, str.length() - 1);
         return str;
     }
 }

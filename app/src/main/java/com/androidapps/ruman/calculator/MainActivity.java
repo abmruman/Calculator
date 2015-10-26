@@ -61,6 +61,7 @@ public class MainActivity extends Activity {
         switch (txtBtn) {
             case "=":
                 calculateResult();
+                textViewMain.setText(fixExpression(textViewMain.getText().toString()));
                 if (!textViewResult.toString().equals("")) {
                     try {
                         history.writeHistory(textViewMain.getText() + " = " + textViewResult.getText() + "\n");
@@ -103,7 +104,7 @@ public class MainActivity extends Activity {
             case "x":
             case "÷":
                 //String text = textViewMain.getText().toString();
-                if (strMain.endsWith("\u00F7")
+                if (strMain.endsWith("÷")
                         || strMain.endsWith("+")
                         || strMain.endsWith("-")
                         || strMain.endsWith("x")
@@ -128,7 +129,7 @@ public class MainActivity extends Activity {
     }
 
     public void calculateResult() {
-        String strMain = textViewMain.getText().toString();
+        String strMain = fixExpression(textViewMain.getText().toString());
         Double result;
         DecimalFormat decimalFormat = new DecimalFormat("#.######");
 
@@ -138,5 +139,16 @@ public class MainActivity extends Activity {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public boolean invalidExpression(String expression){
+        return expression.endsWith("+") || expression.endsWith("-") || expression.endsWith("*") || expression.endsWith("/") || expression.endsWith("(");
+
+    }
+    public String fixExpression(String expression){
+        if(invalidExpression(expression)){
+            return expression.substring(0, expression.length() - 1);
+        }
+        return expression;
     }
 }
