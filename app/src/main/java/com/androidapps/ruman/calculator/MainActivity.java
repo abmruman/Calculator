@@ -28,15 +28,19 @@ public class MainActivity extends Activity {
     @Override
     protected void onStart() {
         super.onStart();
-        calculator = new Calculator();
-        history = new History(this);
-        textViewMain = (TextView) findViewById(R.id.textViewMain);
-        textViewResult = (TextView) findViewById(R.id.textViewResult);
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+        calculator = new Calculator();
+        history = new History(this);
+        textViewMain = (TextView) findViewById(R.id.textViewMain);
+        textViewResult = (TextView) findViewById(R.id.textViewResult);
+        if(textViewResult.getText().toString() == "")
+            textViewResult.setText("0");
+        if(textViewMain.getText().toString() == "")
+            textViewMain.setText("0");
     }
 
     public void History(View view) {
@@ -66,18 +70,25 @@ public class MainActivity extends Activity {
                     try {
                         history.writeHistory(textViewMain.getText() + " = " + textViewResult.getText() + "\n");
                         Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
+                        textViewMain.setText(textViewResult.getText().toString());
+                        textViewResult.setText("0");
                     } catch (Exception e) {
+                        textViewResult.setText("Error!");
                         e.printStackTrace();
                     }
-                    textViewMain.setText(textViewResult.getText().toString());
-                    textViewResult.setText("");
+
 
                 }
 
                 break;
             case "DEL":
                 if (strMain.length() > 1) {
-                    textViewMain.setText(strMain.toCharArray(), 0, strMain.length() - 1);
+                    if(textViewResult.getText().toString() != "Error!")
+                        textViewMain.setText(strMain.toCharArray(), 0, strMain.length() - 1);
+                    else {
+                        textViewMain.setText("0");
+                        textViewResult.setText("0");
+                    }
                 } else {
                     textViewMain.setText("0");
                 }

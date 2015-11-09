@@ -19,15 +19,13 @@
             android:layout_gravity="end"
             android:gravity="end"
             android:scrollHorizontally="true"
-            android:text="@string/main_calculator"
             android:textSize="50sp" />
     </HorizontalScrollView>
 
     <TextView
         android:id="@+id/textViewResult"
         style="@style/MainText"
-        android:layout_below="@+id/scrollMain"
-        android:text="" />
+        android:layout_below="@+id/scrollMain" />
 
     <TableLayout
         android:id="@+id/tablePad"
@@ -154,10 +152,10 @@
                 android:text="@string/btn_log" />
 
             <Button
-                android:id="@+id/btnFact"
+                android:id="@+id/btnPower"
                 style="@style/ButtonScientific"
                 android:onClick="Click"
-                android:text="@string/btn_fact" />
+                android:text="@string/btn_power" />
         </TableRow>
 
         <TableRow
@@ -208,12 +206,14 @@
                 style="@style/ButtonScientific"
                 android:onClick="Click"
                 android:text="@string/btn_exp" />
-
             <Button
-                android:id="@+id/btnPower"
+                android:id="@+id/btnFact"
                 style="@style/ButtonScientific"
                 android:onClick="Click"
-                android:text="@string/btn_power" />
+                android:clickable="false"
+                android:text="" />
+
+
         </TableRow>
 
         <TableRow
@@ -267,7 +267,8 @@
                 android:id="@+id/btnRoot"
                 style="@style/ButtonScientific"
                 android:onClick="Click"
-                android:text="@string/btn_root" />
+                android:clickable="false"
+                android:text="" />
         </TableRow>
     </TableLayout>
 
