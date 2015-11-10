@@ -81,6 +81,7 @@
             <Button
                 android:id="@+id/btnDel"
                 style="@style/ButtonSign"
+                android:longClickable="true"
                 android:onClick="Click"
                 android:text="@string/btn_del" />
 
@@ -209,11 +210,10 @@
                 android:onClick="Click"
                 android:text="@string/btn_exp" />
             <Button
-                android:id="@+id/btnFact"
+                android:id="@+id/btnMPlus"
                 style="@style/ButtonScientific"
-                android:clickable="false"
                 android:onClick="Click"
-                android:text="" />
+                android:text="@string/btn_MR" />
 
 
         </TableRow>
@@ -235,11 +235,11 @@
                 android:text="@string/btn_0" />
 
             <Button
+                android:id="@+id/btnMR"
                 style="@style/ButtonNumber"
                 android:layout_column="0"
-                android:clickable="false"
                 android:onClick="Click"
-                android:text="" />
+                android:text="@string/btn_MPlus" />
 
             <Button
                 android:id="@+id/btnPlus"
@@ -266,11 +266,10 @@
                 android:text="@string/btn_par_close" />
 
             <Button
-                android:id="@+id/btnRoot"
+                android:id="@+id/btnMC"
                 style="@style/ButtonScientific"
-                android:clickable="false"
                 android:onClick="Click"
-                android:text="" />
+                android:text="@string/btn_MC" />
         </TableRow>
     </TableLayout>
 

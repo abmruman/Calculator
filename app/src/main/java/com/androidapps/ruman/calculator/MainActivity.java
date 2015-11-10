@@ -2,6 +2,7 @@ package com.androidapps.ruman.calculator;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,13 +17,17 @@ import java.text.DecimalFormat;
  */
 
 public class MainActivity extends Activity {
+    public final String HISTORY_SHARED_PREF = "HistoryPref";
     EditText textViewMain, textViewResult;
     Calculator calculator;
     History history;
+    private SharedPreferences historySharedPref;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        longClickDel();
     }
 
     @Override
@@ -41,6 +46,8 @@ public class MainActivity extends Activity {
             textViewResult.setText("0");
         if(textViewMain.getText().toString() == "")
             textViewMain.setText("0");
+
+        historySharedPref = getSharedPreferences(HISTORY_SHARED_PREF, MODE_PRIVATE);
     }
 
     public void History(View view) {
@@ -48,11 +55,22 @@ public class MainActivity extends Activity {
 
     }
 
-
+    public void longClickDel() {
+        Button btnDel = (Button) findViewById(R.id.btnDel);
+        btnDel.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                textViewMain.setText("0");
+                textViewResult.setText("0");
+                return true;
+            }
+        });
+    }
     public void Click(View view) {
         Button btn = (Button) view;
 
         String strMain = textViewMain.getText().toString();
+        String strResult = textViewResult.getText().toString();
         String txtBtn = btn.getText().toString();
         final HorizontalScrollView scrollView = (HorizontalScrollView) findViewById(R.id.scrollMain);
 
@@ -62,6 +80,8 @@ public class MainActivity extends Activity {
             }
         }, 100L);
 
+        SharedPreferences.Editor editor = historySharedPref.edit();
+        String strHistory = historySharedPref.getString("History", "");
         switch (txtBtn) {
             case "=":
                 textViewMain.setText(fixExpression(textViewMain.getText().toString()));
@@ -109,6 +129,33 @@ public class MainActivity extends Activity {
                 }
                 if (!hasDot)
                     textViewMain.append(".");
+                break;
+            case "M+":
+
+                if (strHistory.equals("")) {
+                    Toast.makeText(MainActivity.this, "Memory is empty.", Toast.LENGTH_SHORT).show();
+                } else {
+                    if (textViewMain.getText().equals("0"))
+                        textViewMain.setText(strHistory);
+                    else
+                        textViewMain.append(strHistory);
+                    Toast.makeText(MainActivity.this, "Memory has " + strHistory, Toast.LENGTH_SHORT).show();
+                }
+                calculateResult();
+                break;
+            case "MR":
+                String result = textViewResult.getText().toString();
+                if (!result.equals("") && !result.equals("Error!")) {
+                    editor.putString("History", result);
+                    editor.commit();
+                    Toast.makeText(MainActivity.this, "Memory is set to: " + strResult, Toast.LENGTH_SHORT).show();
+                }
+
+                break;
+            case "MC":
+                editor.putString("History", "");
+                editor.commit();
+                Toast.makeText(MainActivity.this, "Memory is cleared.", Toast.LENGTH_SHORT).show();
                 break;
 //            case "π":
 //                txtBtn = getString(R.string.btn_pi);

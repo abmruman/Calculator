@@ -35,4 +35,7 @@
     <string name="btn_exp">e</string>
     <string name="btn_power">^</string>
     <string name="btn_root">√</string>
+    <string name="btn_MPlus">M+</string>
+    <string name="btn_MC">MC</string>
+    <string name="btn_MR">MR</string>
 </resources>
