@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.HorizontalScrollView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
@@ -16,7 +16,7 @@ import java.text.DecimalFormat;
  */
 
 public class MainActivity extends Activity {
-    TextView textViewMain, textViewResult;
+    EditText textViewMain, textViewResult;
     Calculator calculator;
     History history;
     @Override
@@ -35,8 +35,8 @@ public class MainActivity extends Activity {
         super.onResume();
         calculator = new Calculator();
         history = new History(this);
-        textViewMain = (TextView) findViewById(R.id.textViewMain);
-        textViewResult = (TextView) findViewById(R.id.textViewResult);
+        textViewMain = (EditText) findViewById(R.id.textViewMain);
+        textViewResult = (EditText) findViewById(R.id.textViewResult);
         if(textViewResult.getText().toString() == "")
             textViewResult.setText("0");
         if(textViewMain.getText().toString() == "")
@@ -64,16 +64,18 @@ public class MainActivity extends Activity {
 
         switch (txtBtn) {
             case "=":
-                calculateResult();
                 textViewMain.setText(fixExpression(textViewMain.getText().toString()));
-                if (!textViewResult.toString().equals("")) {
+                if (!textViewResult.toString().equals("") || !textViewResult.toString().equals("Error!")) {
                     try {
-                        history.writeHistory(textViewMain.getText() + " = " + textViewResult.getText() + "\n");
-                        Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
-                        textViewMain.setText(textViewResult.getText().toString());
-                        textViewResult.setText("0");
+                        if (calculateResult()) {
+                            history.writeHistory(textViewMain.getText() + " = " + textViewResult.getText() + "\n");
+                            Toast.makeText(this, "Done", Toast.LENGTH_SHORT).show();
+                            textViewMain.setText(textViewResult.getText().toString());
+                            textViewResult.setText("0");
+                        } else {
+                            textViewResult.setText("Error!");
+                        }
                     } catch (Exception e) {
-                        textViewResult.setText("Error!");
                         e.printStackTrace();
                     }
 
@@ -120,7 +122,9 @@ public class MainActivity extends Activity {
                         || strMain.endsWith("-")
                         || strMain.endsWith("x")
                         || strMain.endsWith("π")
-                        || strMain.equals("0")) {
+                        || strMain.equals("0")
+                        || strMain.equals(".")
+                        || strMain.equals("(")) {
 
                     break;
                 }
@@ -139,7 +143,7 @@ public class MainActivity extends Activity {
 
     }
 
-    public void calculateResult() {
+    public boolean calculateResult() {
         String strMain = fixExpression(textViewMain.getText().toString());
         Double result;
         DecimalFormat decimalFormat = new DecimalFormat("#.######");
@@ -147,9 +151,12 @@ public class MainActivity extends Activity {
         try {
             result = calculator.calculate(strMain);
             textViewResult.setText(decimalFormat.format(result)); //String.format("%.6f%n",result)
+            return true;
         } catch (Exception e) {
+            //textViewResult.setText("Error!");
             e.printStackTrace();
         }
+        return false;
     }
 
     public boolean invalidExpression(String expression){

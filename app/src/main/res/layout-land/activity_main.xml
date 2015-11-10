@@ -12,20 +12,22 @@
         android:overScrollMode="ifContentScrolls"
         android:scrollbarSize="0dp">
 
-        <TextView
+        <EditText
             android:id="@+id/textViewMain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
+            android:editable="false"
             android:gravity="end"
             android:scrollHorizontally="true"
             android:textSize="50sp" />
     </HorizontalScrollView>
 
-    <TextView
+    <EditText
         android:id="@+id/textViewResult"
         style="@style/MainText"
-        android:layout_below="@+id/scrollMain" />
+        android:layout_below="@+id/scrollMain"
+        android:editable="false" />
 
     <TableLayout
         android:id="@+id/tablePad"
@@ -209,8 +211,8 @@
             <Button
                 android:id="@+id/btnFact"
                 style="@style/ButtonScientific"
-                android:onClick="Click"
                 android:clickable="false"
+                android:onClick="Click"
                 android:text="" />
 
 
@@ -266,8 +268,8 @@
             <Button
                 android:id="@+id/btnRoot"
                 style="@style/ButtonScientific"
-                android:onClick="Click"
                 android:clickable="false"
+                android:onClick="Click"
                 android:text="" />
         </TableRow>
     </TableLayout>
