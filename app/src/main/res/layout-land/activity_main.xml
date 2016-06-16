@@ -9,7 +9,6 @@
         android:id="@+id/scrollMain"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:fillViewport="false"
         android:overScrollMode="ifContentScrolls"
         android:scrollbarSize="0dp">
 
@@ -18,99 +17,39 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="end"
+            android:editable="false"
             android:gravity="end"
-            android:inputType="none"
             android:scrollHorizontally="true"
             android:textSize="50sp" />
     </HorizontalScrollView>
 
     <EditText
         android:id="@+id/textViewResult"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        style="@style/MainText"
         android:layout_below="@+id/scrollMain"
-        android:layout_gravity="end"
-        android:gravity="end"
-        android:inputType="none"
-        android:scrollHorizontally="true"
-        android:textSize="40sp" />
+        android:editable="false" />
+
     <TableLayout
         android:id="@+id/tablePad"
         style="@style/TablePad"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/textViewResult">
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <Button
-                android:id="@+id/btnSin"
-                style="@style/ButtonScientific"
-                android:onClick="Click"
-                android:text="@string/btn_sin" />
-            <Button
-                android:id="@+id/btnCos"
-                style="@style/ButtonScientific"
-                android:onClick="Click"
-                android:text="@string/btn_cos" />
-            <Button
-                android:id="@+id/btnTan"
-                style="@style/ButtonScientific"
-                android:onClick="Click"
-                android:text="@string/btn_tan" />
-            <Button
-                android:id="@+id/btnLn"
-                style="@style/ButtonScientific"
-                android:onClick="Click"
-                android:text="@string/btn_ln" />
-            <Button
-                android:id="@+id/btnLog"
-                style="@style/ButtonScientific"
-                android:onClick="Click"
-                android:text="@string/btn_log" />
 
-            <Button
-                android:id="@+id/memoryPlus"
-                style="@style/ButtonScientific"
-                android:onClick="Click"
-                android:text="@string/btn_MR" />
 
         </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <Button
-            android:id="@+id/btnPi"
-            style="@style/ButtonScientific"
-            android:onClick="Click"
-            android:text="@string/btn_pi" />
-        <Button
-            android:id="@+id/btnExp"
-            style="@style/ButtonScientific"
-            android:onClick="Click"
-            android:text="@string/btn_exp" />
-        <Button
-            android:id="@+id/btnPower"
-            style="@style/ButtonScientific"
-            android:onClick="Click"
-            android:text="@string/btn_power" />
-        <Button
-            android:id="@+id/btnParOpen"
-            style="@style/ButtonScientific"
-            android:onClick="Click"
-            android:text="@string/btn_par_open" />
-        <Button
-            android:id="@+id/btnParClose"
-            style="@style/ButtonScientific"
-            android:onClick="Click"
-            android:text="@string/btn_par_close" />
 
-            <Button
-                android:id="@+id/memoryClear"
-                style="@style/ButtonScientific"
-                android:onClick="Click"
-                android:text="@string/btn_MC" />
+
         </TableRow>
+
         <TableRow
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -118,40 +57,51 @@
             <Button
                 android:id="@+id/btn7"
                 style="@style/ButtonNumber"
-                android:layout_column="0"
                 android:onClick="Click"
                 android:text="@string/btn_7" />
 
             <Button
                 android:id="@+id/btn8"
                 style="@style/ButtonNumber"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_column="1"
                 android:onClick="Click"
                 android:text="@string/btn_8" />
 
             <Button
                 android:id="@+id/btn9"
                 style="@style/ButtonNumber"
-                android:layout_column="2"
                 android:onClick="Click"
                 android:text="@string/btn_9" />
 
             <Button
                 android:id="@+id/btnDivide"
                 style="@style/ButtonSign"
-                android:layout_column="3"
                 android:onClick="Click"
                 android:text="@string/btn_divide" />
 
             <Button
                 android:id="@+id/btnDel"
                 style="@style/ButtonSign"
-                android:layout_column="4"
                 android:longClickable="true"
                 android:onClick="Click"
                 android:text="@string/btn_del" />
+
+            <Button
+                android:id="@+id/btnSin"
+                style="@style/ButtonScientific"
+                android:onClick="Click"
+                android:text="@string/btn_sin" />
+
+            <Button
+                android:id="@+id/btnCos"
+                style="@style/ButtonScientific"
+                android:onClick="Click"
+                android:text="@string/btn_cos" />
+
+            <Button
+                android:id="@+id/btnTan"
+                style="@style/ButtonScientific"
+                android:onClick="Click"
+                android:text="@string/btn_tan" />
 
         </TableRow>
 
@@ -162,44 +112,53 @@
             <Button
                 android:id="@+id/btn4"
                 style="@style/ButtonNumber"
-                android:layout_column="0"
                 android:onClick="Click"
                 android:text="@string/btn_4" />
 
             <Button
                 android:id="@+id/btn5"
                 style="@style/ButtonNumber"
-                android:layout_column="1"
                 android:onClick="Click"
                 android:text="@string/btn_5" />
 
             <Button
                 android:id="@+id/btn6"
                 style="@style/ButtonNumber"
-                android:layout_column="2"
-
                 android:onClick="Click"
                 android:text="@string/btn_6" />
 
             <Button
                 android:id="@+id/btnMulti"
                 style="@style/ButtonSign"
-                android:layout_column="3"
                 android:onClick="Click"
                 android:text="@string/btn_multi" />
 
             <Button
                 android:id="@+id/btnHistory"
                 style="@style/ButtonSign"
-                android:layout_column="4"
-                android:layout_margin="0dp"
-                android:layout_marginTop="0dp"
                 android:gravity="center_horizontal|bottom"
                 android:onClick="History"
                 android:paddingBottom="0dp"
-                android:paddingTop="0dp"
                 android:text="@string/history"
                 android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnLn"
+                style="@style/ButtonScientific"
+                android:onClick="Click"
+                android:text="@string/btn_ln" />
+
+            <Button
+                android:id="@+id/btnLog"
+                style="@style/ButtonScientific"
+                android:onClick="Click"
+                android:text="@string/btn_log" />
+
+            <Button
+                android:id="@+id/btnPower"
+                style="@style/ButtonScientific"
+                android:onClick="Click"
+                android:text="@string/btn_power" />
         </TableRow>
 
         <TableRow
@@ -209,42 +168,54 @@
             <Button
                 android:id="@+id/btn1"
                 style="@style/ButtonNumber"
-                android:layout_column="0"
                 android:onClick="Click"
                 android:text="@string/btn_1" />
 
             <Button
                 android:id="@+id/btn2"
                 style="@style/ButtonNumber"
-                android:layout_column="1"
                 android:onClick="Click"
                 android:text="@string/btn_2" />
 
             <Button
                 android:id="@+id/btn3"
                 style="@style/ButtonNumber"
-                android:layout_column="2"
                 android:onClick="Click"
                 android:text="@string/btn_3" />
 
             <Button
                 android:id="@+id/btnMinus"
                 style="@style/ButtonSign"
-                android:layout_column="3"
                 android:onClick="Click"
                 android:text="@string/btn_minus" />
 
             <Button
                 android:id="@+id/btnHistory2"
                 style="@style/ButtonSign"
-                android:layout_column="4"
-                android:layout_margin="0dp"
                 android:gravity="center_horizontal|top"
                 android:onClick="History"
                 android:padding="0dp"
                 android:text="@string/history2"
-                android:textAllCaps="false"
                 android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/btnPi"
+                style="@style/ButtonScientific"
+                android:onClick="Click"
+                android:text="@string/btn_pi" />
+
+            <Button
+                android:id="@+id/btnExp"
+                style="@style/ButtonScientific"
+                android:onClick="Click"
+                android:text="@string/btn_exp" />
+            <Button
+                android:id="@+id/btnMPlus"
+                style="@style/ButtonScientific"
+                android:onClick="Click"
+                android:text="@string/btn_MR" />
+
+
         </TableRow>
 
         <TableRow
@@ -254,18 +225,17 @@
             <Button
                 android:id="@+id/btnDot"
                 style="@style/ButtonNumber"
-                android:layout_column="0"
                 android:onClick="Click"
                 android:text="@string/btn_dot" />
 
             <Button
                 android:id="@+id/btn0"
                 style="@style/ButtonNumber"
-                android:layout_column="1"
                 android:onClick="Click"
                 android:text="@string/btn_0" />
 
             <Button
+                android:id="@+id/btnMR"
                 style="@style/ButtonNumber"
                 android:layout_column="0"
                 android:onClick="Click"
@@ -274,16 +244,32 @@
             <Button
                 android:id="@+id/btnPlus"
                 style="@style/ButtonSign"
-                android:layout_column="3"
                 android:onClick="Click"
                 android:text="@string/btn_plus" />
 
             <Button
                 android:id="@+id/btnEqual"
                 style="@style/ButtonSign"
-                android:layout_column="3"
                 android:onClick="Click"
                 android:text="@string/btn_equal" />
+
+            <Button
+                android:id="@+id/btnParOpen"
+                style="@style/ButtonScientific"
+                android:onClick="Click"
+                android:text="@string/btn_par_open" />
+
+            <Button
+                android:id="@+id/btnParClose"
+                style="@style/ButtonScientific"
+                android:onClick="Click"
+                android:text="@string/btn_par_close" />
+
+            <Button
+                android:id="@+id/btnMC"
+                style="@style/ButtonScientific"
+                android:onClick="Click"
+                android:text="@string/btn_MC" />
         </TableRow>
     </TableLayout>
 

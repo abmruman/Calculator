@@ -9,12 +9,12 @@
     <string name="btn_5">5</string>
     <string name="btn_6">6</string>
     <string name="btn_multi">x</string>
-    <string name="btn_par_start">(</string>
+    <string name="btn_par_open">(</string>
     <string name="btn_1">1</string>
     <string name="btn_2">2</string>
     <string name="btn_3">3</string>
     <string name="btn_minus">-</string>
-    <string name="btn_par_end">)</string>
+    <string name="btn_par_close">)</string>
     <string name="btn_dot">.</string>
     <string name="btn_0">0</string>
     <string name="btn_pi">π</string>
@@ -26,4 +26,16 @@
     <string name="history2">t\no\nr\ny</string>
     <string name="back">Back</string>
     <string name="History">History</string>
+    <string name="btn_sin">sin</string>
+    <string name="btn_cos">cos</string>
+    <string name="btn_tan">tan</string>
+    <string name="btn_ln">ln</string>
+    <string name="btn_log">log</string>
+    <string name="btn_fact">!</string>
+    <string name="btn_exp">e</string>
+    <string name="btn_power">^</string>
+    <string name="btn_root">√</string>
+    <string name="btn_MPlus">M+</string>
+    <string name="btn_MC">MC</string>
+    <string name="btn_MR">MR</string>
 </resources>
